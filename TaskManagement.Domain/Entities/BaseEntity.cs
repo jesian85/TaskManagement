@@ -11,7 +11,7 @@ namespace TaskManagement.Domain.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public TKey Id { get; set; } = default!;
 
-        public override bool Equals(object obj) => obj is BaseEntity<TKey> entity && EqualityComparer<TKey>.Default.Equals(Id, entity.Id);
+        public override bool Equals(object? obj) => obj is BaseEntity<TKey> entity && EqualityComparer<TKey>.Default.Equals(Id, entity.Id);
 
         public override int GetHashCode() => HashCode.Combine(Id, GetType().Name);
     }

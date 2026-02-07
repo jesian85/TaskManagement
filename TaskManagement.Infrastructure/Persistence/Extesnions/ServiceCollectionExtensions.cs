@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TaskManagement.Domain.Repositories;
+using TaskManagement.Infrastructure.Persistence.Repositories;
 
 namespace TaskManagement.Infrastructure.Persistence.Extesnions
 {
@@ -29,7 +30,7 @@ namespace TaskManagement.Infrastructure.Persistence.Extesnions
             services
                 //.AddTransient(typeof(IUnitOfWork), typeof(UnitOfWork))
                 //.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>))
-                .AddTransient<ITaskRepository, ITaskRepository>();
+                .AddTransient<ITaskRepository, TaskRepository>();
         }
     }
 }
